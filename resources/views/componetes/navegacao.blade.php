@@ -8,7 +8,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link d-flex align-items-center gap-2" href="#">
+        <a class="nav-link d-flex align-items-center gap-2" href="{{route('vendas.index')}}">
             <svg class="bi">
                 <use xlink:href="#file-earmark" />
             </svg>
@@ -24,7 +24,7 @@
         </a>
     </li>
     <li class="nav-item">
-        <a class="nav-link d-flex align-items-center gap-2" href="#">
+        <a class="nav-link d-flex align-items-center gap-2" href="{{route('clientes.index')}}">
             <svg class="bi">
                 <use xlink:href="#people" />
             </svg>
@@ -39,7 +39,7 @@
 
 <ul class="nav flex-column mb-auto">
     <li class="nav-item">
-        <a class="nav-link d-flex align-items-center gap-2" href="#">
+        <a class="nav-link d-flex align-items-center gap-2" href="">
             <svg class="bi">
                 <use xlink:href="#gear-wide-connected" />
             </svg>

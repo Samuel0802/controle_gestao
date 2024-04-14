@@ -56,28 +56,28 @@ Route::prefix('produtos')->group(function(){
 });
 
 //ROTA DE CLIENTES
-// Route::prefix('clientes')->group(function(){
+Route::prefix('clientes')->group(function(){
 
-//     Route::get('/', [ClientesController::class,'index'])->name('clientes.index');
-//     //CADASTRO DE CLIENTE
-//     Route::get('/cadastrarCliente', [ClientesController::class,'cadastrarCliente'])->name('cadastrar.cliente');
-//     Route::post('/cadastrarCliente', [ClientesController::class,'cadastrarCliente'])->name('cadastrar.cliente');
-//     // ATUALIZA UPDATE
-//     Route::get('/atualizarCliente/{id}', [ClientesController::class,'atualizarCliente'])->name('atualizar.cliente');
-//     Route::put('/atualizarCliente/{id}', [ClientesController::class,'atualizarCliente'])->name('atualizar.cliente');
+    Route::get('/', [ClientesController::class,'index'])->name('clientes.index');
+    //CADASTRO DE CLIENTE
+    Route::get('/cadastrarCliente', [ClientesController::class,'cadastrarCliente'])->name('cadastrar.cliente');
+    Route::post('/cadastrarCliente', [ClientesController::class,'cadastrarCliente'])->name('cadastrar.cliente');
+    // ATUALIZA UPDATE
+    Route::get('/atualizarCliente/{id}', [ClientesController::class,'atualizarCliente'])->name('atualizar.cliente');
+    Route::put('/atualizarCliente/{id}', [ClientesController::class,'atualizarCliente'])->name('atualizar.cliente');
 
-//     Route::delete('/delete', [ClientesController::class,'delete'])->name('cliente.delete');
+    Route::delete('/delete', [ClientesController::class,'delete'])->name('cliente.delete');
     
 
-// });
+});
 
 //ROTA DE VENDAS
-// Route::prefix('vendas')->group(function(){
+Route::prefix('vendas')->group(function(){
 
-//     Route::get('/', [VendaController::class,'index'])->name('vendas.index');
-//     Route::get('/cadastrarCliente', [VendaController::class,'cadastrarVenda'])->name('cadastrar.venda');
-//     Route::post('/cadastrarCliente', [VendaController::class,'cadastrarVenda'])->name('cadastrar.venda');
+    Route::get('/', [VendaController::class,'index'])->name('vendas.index');
+    Route::get('/cadastrarCliente', [VendaController::class,'cadastrarVenda'])->name('cadastrar.venda');
+    Route::post('/cadastrarCliente', [VendaController::class,'cadastrarVenda'])->name('cadastrar.venda');
    
 
-// });
+});
 
