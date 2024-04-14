@@ -4,15 +4,15 @@
 @section('content')
     <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">
-            <Prog></Prog>Clientes
+            <Prog></Prog>Vendas
         </h1>
     </div>
     <div>
-        <form action="{{route ('clientes.index')}}" method="get">
+        <form action="{{route ('vendas.index')}}" method="get">
             <input type="text" name="pesquisar" placeholder="Digite o Nome"/>
             <button>Pesquisar</button>
 
-            <a type="button" href="{{route ('cadastrar.cliente')}}" class="btn btn-success float-end">Incluir Clientes</a>
+            <a type="button" href="{{route ('cadastrar.venda')}}" class="btn btn-success float-end">Incluir Clientes</a>
         </form>
 
         
@@ -28,40 +28,37 @@
        <table class="table table-striped table-sm">
                 <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th >E-mail</th>
-                        <th >Endereço</th>
-                        <th >Logradouro</th>
-                        <th >Cep</th>
-                        <th >Bairro</th>
-                        <th >Ações</th>
-
-
+                        <th>Númeração</th>
+                        <th >Produto</th>
+                        <th >Cliente</th>
+            
+                        
                     </tr>
                 </thead>
                 <tbody>
 
                     {{-- findproduto e produto estão sendo puxado do controller do produto --}}
-                    @foreach ($findCliente as $cliente) 
+                    @foreach ($findVendas as $venda) 
                     <tr>
                         {{-- produto e nome esta sendo pego do seeder produto --}}
-                        <td>{{$cliente->nome}}</td>
-                        <td>{{$cliente->email}}</td>
-                        <td>{{$cliente->endereco}}</td>
-                        <td>{{$cliente->logradouro}}</td>
-                        <td>{{$cliente->cep}}</td>
-                        <td>{{$cliente->bairro}}</td>
-
+                        <td>{{$venda->numero_da_venda}}</td>
+                        {{-- Como é belongsTo: produto no db acessando nome dele --}}
                         <td>
-                            <a href="{{route('atualizar.cliente', $cliente->id )}}" class="btn btn-light btn-sm">
-                                Editar
-                            </a>
-                            <meta name='csrf-token' content=" {{ csrf_token() }}" />
-                            <a onclick="deleteRegistroPaginacao( '{{ route('cliente.delete') }} ', {{ $cliente->id }}  )"
-                                class="btn btn-danger btn-sm">
-                                Excluir
-                            </a>
+                            @if ($venda->produto)
+                                {{ $venda->produto->nome }}
+                            @else
+                                Produto não encontrado
+                            @endif
                         </td>
+                         {{-- Como é belongsTo: cliente no db acessando nome dele --}}
+                         <td>
+                            @if ($venda->cliente)
+                                {{ $venda->cliente->nome }}
+                            @else
+                                Cliente não encontrado
+                            @endif
+                        </td>
+                        
                     </tr>
                     @endforeach
                 </tbody>

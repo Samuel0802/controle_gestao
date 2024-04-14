@@ -11,18 +11,24 @@ class FormRequestVenda extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
-    /**
-     * Get the validation rules that apply to the request.
-     *
-     * @return array<string, \Illuminate\Contracts\Validation\ValidationRule|array<mixed>|string>
-     */
-    public function rules(): array
-    {
-        return [
-            //
+//Comando no terminal;  php artisan make:request FormRequestProduto
+  
+public function rules(): array
+{
+     $request = []; //vai passa uma lista vazia
+
+    if ($this->method() == "POST" || $this->method() == "PUT"){ //vem do controller produto
+        $request = [
+            'numero_da_venda' => 'required', //obs: precisa ser igual a migration da tabela
+            'produto_id' => 'required',
+            'cliente_id' => 'required',
         ];
-    }
+    } //SE FOR GET
+
+    return $request;//vai retornar lista vazia
+   
+}
 }

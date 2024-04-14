@@ -32,19 +32,9 @@ class VendaController extends Controller
     }
 
 
-    //função pra delete a lista
-    public function delete(Request $request)
-    {
-        $id = $request->id;
-        $buscaRegistro = Venda::find($id);
-        $buscaRegistro->delete();
-
-        return response()->json(['success' => true]);
-    }
-
   //função de create
   //cadastrarProduto esta pegando da class,'cadastrarProduto' na rota
-  public function cadastrarProduto(FormRequestVenda $request ){ //Request porque vai receber de um formulario
+  public function cadastrarVenda(FormRequestVenda $request ){ //Request porque vai receber de um formulario
    
      if($request->method() == "POST"){
         //criar os dados
@@ -59,7 +49,7 @@ class VendaController extends Controller
      }
 
       //senão mostrar os dados
-     return view('pages.produtos.create');
+     return view('pages.vendas.create');
   }
 
 

@@ -27,7 +27,7 @@ class Venda extends Model
     
     public function getVendasPesquisarIndex(string $search = ''){
 
-        $produto = $this->where(function ($query) use ($search){
+        $venda = $this->where(function ($query) use ($search){
 
             if($search ){
                 $query->where('numero_da_venda', $search);
@@ -38,7 +38,7 @@ class Venda extends Model
             }
         })->get();
 
-        return $produto;
+        return $venda;
     }
 
 }
