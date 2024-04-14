@@ -24,4 +24,21 @@ class Venda extends Model
         return $this->belongsTo(Cliente::class);
     }
 
+    
+    public function getVendasPesquisarIndex(string $search = ''){
+
+        $produto = $this->where(function ($query) use ($search){
+
+            if($search ){
+                $query->where('numero_da_venda', $search);
+                $query->orWhere('numero_da_venda', 'LIKE', "%{$search}%");
+
+                //LIKE: no input ter o preenchimento automatico 
+                 
+            }
+        })->get();
+
+        return $produto;
+    }
+
 }
