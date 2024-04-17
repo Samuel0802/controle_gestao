@@ -12,7 +12,7 @@
             <input type="text" name="pesquisar" placeholder="Digite o Nome"/>
             <button>Pesquisar</button>
 
-            <a type="button" href="{{route ('cadastrar.venda')}}" class="btn btn-success float-end">Incluir Clientes</a>
+            <a type="button" href="{{route ('cadastrar.venda')}}" class="btn btn-success float-end">Incluir Venda</a>
         </form>
 
         
