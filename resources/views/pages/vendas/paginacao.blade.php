@@ -31,6 +31,7 @@
                         <th>Númeração</th>
                         <th >Produto</th>
                         <th >Cliente</th>
+                        <th >Ações</th>
             
                         
                     </tr>
@@ -57,6 +58,13 @@
                             @else
                                 Cliente não encontrado
                             @endif
+                        </td>
+
+                        <td>
+                            <a href="{{route('enviaComprovantePorEmail.venda', $venda->id )}}" class="btn btn-light btn-sm">
+                                Enviar Email
+                            </a>
+                          
                         </td>
                         
                     </tr>

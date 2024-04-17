@@ -77,6 +77,29 @@ config/app.php
 Brian2694\Toastr\ToastrServiceProvider::class,
 ```
 
+/-----------------------------------------------------
+
+### Etapa para envio de email
+
+Gerar uma senha de App 
+
+link: https://myaccount.google.com/u/1/apppasswords?pli=1&rapt=AEjHL4MyiBnfXlsLC-sGsFI2qxvpS8vV9uikivxJBm_pWBHGZ_pvr2Fd3ivlitYgWYnF7no_Hu2A7hFiglvpkdRk8XRC_f5vB6t512-BzynxmY09NdkUeog
+
+ ### função para envio de email
+
+```sh
+ php artisan make:mail ComprovanteDeVendaEmail
+ ```
+### Criar um view do layout do email
+
+ ### Criar as rotas e buscar email do cliente
+
+ ### Criando a função send no controle
+
+ ### realizar o envio de email
+
+
+
 
 /-------------------------------------------------
 
