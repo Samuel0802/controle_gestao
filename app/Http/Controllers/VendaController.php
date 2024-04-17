@@ -36,28 +36,28 @@ class VendaController extends Controller
 
   //função de create
   //cadastrarProduto esta pegando da class,'cadastrarProduto' na rota
-  public function cadastrarVenda(FormRequestVenda $request ){ //Request porque vai receber de um formulario
-   
-     if($request->method() == "POST"){
-        //criar os dados
 
-        $produtoBd = $request->all(); //vai pegar tudo do meu form
-        dd($produtoBd);
-        Venda::create($produtoBd); //E realizar o create
-      
-       // Toastr::success('Gravado com sucesso');
-       Toastr::success('Dados atualizados com sucesso.');
+  public function cadastrarVenda(FormRequestVenda $request )  {
+    $findNumeracao = Venda::max('numero_da_venda') + 1;
+    $findProduto =  Produto::all();
+    $findCliente =  Cliente::all();
 
-        return redirect()->route('vendas.index'); // ser renderizado na minha index
-     }
+    if ($request->method() == "POST") {
+        // cria os dados
+        $data = $request->all();
+        $data['numero_da_venda'] = $findNumeracao;
+      //  dd($data);
 
-     $findNumeracao = Venda::max('numero_da_venda') + 1;
-     $findProduto = Produto::all(); //buscar todos os produtos do banco produto
-     $findCliente = Cliente::all();
-    // dd($findNumeracao);
-      //senão mostrar os dados
-     return view('pages.vendas.create', compact('findNumeracao','findProduto', 'findCliente')); //renderizar todos os produtos no front e numeracao
-  }
+        Venda::create($data);
+
+        Toastr::success('Dados gravados com sucesso.');
+        return redirect()->route('vendas.index');
+    }
+    // mostrar os dados
+
+    return view('pages.vendas.create', compact('findNumeracao', 'findProduto', 'findCliente'));
+}
+
 
 
 

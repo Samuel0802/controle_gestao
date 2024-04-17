@@ -12,14 +12,14 @@ class VendasSeeder extends Seeder
         // Criação dos dados da tabela de vendas
         Venda::create([
             'numero_da_venda' => 1,
-            'produtos_id' => 4,// produto do id 4
-            'cliente_id' => 2, //cliente do id 2
+            'produtos_id' => 3,// produto do id 4
+            'cliente_id' =>1, //cliente do id 2
         ]);
 
         Venda::create([
             'numero_da_venda' => 2,
-            'produtos_id' => 8,// produto do id 8 
-            'cliente_id' => 3,//cliente do id 3
+            'produtos_id' => 1,// produto do id 8 
+            'cliente_id' => 2,//cliente do id 3
         ]);
     }
 }
