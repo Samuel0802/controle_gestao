@@ -12,7 +12,7 @@ return new class extends Migration
         Schema::create('vendas', function (Blueprint $table) {
             $table->id();
             $table->integer('numero_da_venda'); //integer: pegando numero inteiro
-            $table->foreignId('produtos_id')->constrained('produtos'); //pegando id da tabela produtos
+            $table->foreignId('produto_id')->constrained('produtos'); //pegando id da tabela produtos
             $table->foreignId('cliente_id')->constrained('clientes');//pegando id da tabela produtos
             $table->timestamps();
         });

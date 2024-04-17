@@ -11,7 +11,7 @@ class Venda extends Model
 
     protected $fillable = [ //Coloca no model tudo que criar na migrations database
         'numero_da_venda', 
-        'produtos_id',
+        'produto_id',
         'cliente_id',
         
     ];
