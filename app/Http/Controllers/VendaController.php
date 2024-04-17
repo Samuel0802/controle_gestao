@@ -66,7 +66,7 @@ public function enviaComprovantePorEmail($id)
 {
 //;dd($id);
 
-$buscaVenda = Venda::where('id', '=', $id)->first();
+$buscaVenda = Venda::where('id', '=', $id)->first(); //first() pega o primeiro que estiver
 $produtoNome = $buscaVenda->produto->nome;//funcão do produto esta sendo utilizado no model produto
 $clienteEmail = $buscaVenda->cliente->email;//funcão do cliente->email esta sendo utilizado no model cliente
 

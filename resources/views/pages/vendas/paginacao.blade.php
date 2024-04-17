@@ -28,7 +28,7 @@
        <table class="table table-striped table-sm">
                 <thead>
                     <tr>
-                        <th>Númeração</th>
+                        <th>Número da NF</th>
                         <th >Produto</th>
                         <th >Cliente</th>
                         <th >Ações</th>

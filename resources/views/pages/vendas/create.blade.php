@@ -7,7 +7,7 @@
             <h1 class="h2">Criar novo Venda</h1>
         </div>
         <div class="mb-3">
-            <label class="form-label">Numeração</label>
+            <label class="form-label">Número NF</label>
             <input type="text" disabled value=" {{ $findNumeracao }}"
                 class="form-control @error('numero_da_venda') is-invalid @enderror" name="numero_da_venda">
             @if ($errors->has('numero_da_venda'))
