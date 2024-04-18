@@ -2,14 +2,18 @@
 
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\DashbordController;
 use App\Http\Controllers\VendaController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Facades\Route;
 
 
-Route::get('/', function () {
-    return view('index');
+
+//ROTA DE DASHBORD
+Route::prefix('dashbord')->group(function(){
+
+    Route::get('/', [DashbordController::class,'index'])->name('dashbord.index');
 });
 
 //Rotas produtos
