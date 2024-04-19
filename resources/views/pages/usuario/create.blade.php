@@ -32,6 +32,7 @@
     --}}
 
         </div>
+        
         <div class="col-md-6">
             <label class="form-label">Email</label>
              {{-- validando no front o erro --}}
