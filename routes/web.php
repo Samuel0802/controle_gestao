@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProdutosController;
 use App\Http\Controllers\ClientesController;
 use App\Http\Controllers\DashbordController;
+use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\VendaController;
 use Illuminate\Routing\Route as RoutingRoute;
 use Illuminate\Routing\Router;
@@ -73,5 +74,13 @@ Route::prefix('vendas')->group(function(){
     Route::post('/cadastrarCliente', [VendaController::class,'cadastrarVenda'])->name('cadastrar.venda');
     Route::get('/enviaComprovantePorEmail/{id}', [VendaController::class,'enviaComprovantePorEmail'])->name('enviaComprovantePorEmail.venda');
 
+});
+
+
+//ROTA DE USUARIO
+Route::prefix('usuario')->group(function(){
+
+    Route::get('/', [UsuarioController::class,'index'])->name('usuario.index');
+   
 });
 

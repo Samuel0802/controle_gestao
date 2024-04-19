@@ -14,7 +14,8 @@ class DatabaseSeeder extends Seeder
     $this->call([
         Produtos::class,
         ClientesSeeder::class,
-        VendasSeeder::class
+        VendasSeeder::class,
+        UsuarioSeedeer::class
     ]);
     }
 }
