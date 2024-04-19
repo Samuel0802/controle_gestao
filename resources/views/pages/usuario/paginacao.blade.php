@@ -39,7 +39,7 @@
                     @foreach ($findUsuario as $usuario) 
                     <tr>
                         {{-- produto e nome esta sendo pego do seeder produto --}}
-                        <td>{{$usuario->nome}}</td>
+                        <td>{{$usuario->name}}</td>
                         <td>{{$usuario->email}}</td>
 
                         <td>

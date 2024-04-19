@@ -46,9 +46,9 @@ value="{{ old('nome')}} " = para não ocorrer perca de dados no formulario
     </div>
 
     <div class="col-md-6">
-        <label class="form-label">Senha</label>
+        <label class="form-label">Nova Senha</label>
          {{-- validando no front o erro --}}
-        <input type="password" value="{{isset($findUsuario->password) ? $findUsuario->password : old('password')}}" name="password" class="form-control @error('password') is-invalid @enderror" >
+        <input type="password" value="{{old('password')}}" name="password" class="form-control @error('password') is-invalid @enderror" >
 
         @if ($errors->has('password'))
         <div class="invalid-feedback">{{$errors->first('password')}}</div>

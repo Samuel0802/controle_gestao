@@ -71,7 +71,7 @@ class UsuarioController extends Controller
 
 
 
-  public function atualizarUsuario(Request $request, $id ){ //Request porque vai receber de um formulario
+  public function atualizarUsuario(UsuarioFormRequest $request, $id ){ //Request porque vai receber de um formulario
   // dd($id);
     if($request->method() == "PUT"){
 
