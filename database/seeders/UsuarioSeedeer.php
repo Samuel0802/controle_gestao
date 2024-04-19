@@ -16,7 +16,7 @@ class UsuarioSeedeer extends Seeder
             [
                 'name' => 'Samuel Souza',
                  'email' => 'samuelsouza0802@gmail.com',
-                 'password' => Hash::make('senha123') //Pra não reconhecer a senha como string, colocando protegido
+                 'password' => Hash::make('senha123') //Pra não reconhecer a senha como string, colocando cipitrografia
             ]
             );
     }

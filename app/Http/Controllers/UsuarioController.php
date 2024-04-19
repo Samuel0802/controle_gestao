@@ -2,9 +2,11 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\UsuarioFormRequest;
 use App\Models\User;
 use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
 
 class UsuarioController extends Controller
 {
@@ -27,12 +29,12 @@ class UsuarioController extends Controller
 
         //getProdutosPesquisarIndex(); = função que foi criada no model produto
 
-        return view('pages.produtos.paginacao', compact('findProduto')); //compact: manda os dados no meu front end
+        return view('pages.usuario.paginacao', compact('findUsuario')); //compact: manda os dados no meu front end
     }
 
 
     //função pra delete a lista
-    public function delete(Request $request)
+    public function delete(UsuarioFormRequest $request)
     {
         $id = $request->id;
         $buscaRegistro = User::find($id);
@@ -43,14 +45,17 @@ class UsuarioController extends Controller
 
   //função de create
   //cadastrarProduto esta pegando da class,'cadastrarProduto' na rota
-  public function cadastrarProduto(Request $request ){ //Request porque vai receber de um formulario
+  public function cadastrarUsuario(UsuarioFormRequest $request ){ //Request porque vai receber de um formulario
    
      if($request->method() == "POST"){
         //criar os dados
 
         $produtoBd = $request->all(); //vai pegar tudo do meu form
 
+    
 
+       $produtoBd['password'] = Hash::make($produtoBd['password']); //retornar o hash e não senha
+        //dd($produtoBd);
         User::create($produtoBd); //E realizar o create
       
        // Toastr::success('Gravado com sucesso');
@@ -66,7 +71,7 @@ class UsuarioController extends Controller
 
 
 
-  public function atualizarProduto(Request $request, $id ){ //Request porque vai receber de um formulario
+  public function atualizarUsuario(Request $request, $id ){ //Request porque vai receber de um formulario
   // dd($id);
     if($request->method() == "PUT"){
 
