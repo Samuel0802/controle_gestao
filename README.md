@@ -38,16 +38,6 @@ Abordagem de bibliotecas ou serviços populares para envio de e-mails de SMTP.
 Explicação sobre o conceito de relacionamento de tabelas em bancos de dados e sua importância em sistemas web complexos.
 ```
 
-### criar model + migration database
-
-```sh
-php artisan make:model NomeDoControlller -m
-```
-
-### apos criar os campos na migration
-```sh
-php artisan migrate
-```
 
 ### GitHub:
 ```sh
