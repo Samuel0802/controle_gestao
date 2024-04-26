@@ -1,35 +1,41 @@
 
 # Laravel 10 e PHP 8.1
 
-### Passo a passo
+### Projeto
 
-### Crie o Arquivo .env
 
 ```sh
-cp .env.example .env
+O objetivo do projeto consiste em criar um sistema de gestão, que irá possibilitar o gerenciamento de informações relacionadas a uma determinada área, como por exemplo, produto, vendas, clientes, entre outros.
+Para tanto, você utilizará o padrão de arquitetura de software MVC, que consiste na separação da aplicação em três camadas distintas, a Model, a View e a Controller.
 ```
 
-### Gere a key do projeto Laravel
+### Tópicos:
+
+### CRUD de Produtos:
 
 ```sh
-php artisan key:generate
+Explicação sobre o conceito de CRUD (Create, Read, Update, Delete) e sua aplicação em um sistema de gerenciamento de produtos.
+
+Destaque para as melhores práticas de segurança e validação de dados ao lidar com operações CRUD.
 ```
 
-### Validação de formulario
+### CRUD de Clientes
 ```sh
-php artisan make:request FormRequestProduto
+Demonstração prática de como implementar as operações de CRUD para clientes usando o framework PHP.
+
+Inclusão de recursos como formulários de cadastro, pesquisa e edição de clientes
 ```
 
-### criar controller
+### CRUD de Vendas com Envio de E-mail para o Cliente:
 
 ```sh
-php artisan make:controller
+Abordagem de bibliotecas ou serviços populares para envio de e-mails de SMTP.
 
 ```
-### Rodar projeto
+### Relacionamento de Tabelas:
 
 ```sh
-php artisan serve
+Explicação sobre o conceito de relacionamento de tabelas em bancos de dados e sua importância em sistemas web complexos.
 ```
 
 ### criar model + migration database
@@ -43,20 +49,70 @@ php artisan make:model NomeDoControlller -m
 php artisan migrate
 ```
 
-### Criar dados falsos seeder
+### GitHub:
 ```sh
-php artisan make:seeder NomeDaSeeder
+Introdução ao GitHub como uma plataforma de controle de versão e colaboração em projetos de desenvolvimento de software.
+
+Exploração dos recursos do GitHub, como repositórios, branches, commits e pull requests.
 ```
 
-### subir os seeder para banco
+### GitFlow
 ```sh
-php artisan db:seed
+Explicação do GitFlow como um modelo de ramificação para desenvolvimento de software baseado no Git.
 ```
 
 
-### Limpando o banco
+### Tecnologias
 ```sh
-php artisan migrate:refresh
+Seeder
+
+ ORM
+
+Blade
+
+Form Request
+
+Controller Model E View
+
+Phpmyadmin (Banco de dados)
+
+Docker
+
+PHP 8
+
+nginx
+
+mysql
+
+Boostrap (Front-end)
+
+Rotas
+
+Logica de programação if/else 
+
+Refatoração de código
+
+Github
+
+GitFlow
+
+Requisições HTPP put,post,get,delete
+
+Criando Query para paginação
+
+Lidando com Formularios
+
+Lidando com Listagem de dados
+
+CRUD - Create, update, Delete.
+
+Validação de Formularios
+
+Mascas em Input para dinheiro.
+
+Consulta do CEP através do VIACep Api
+
+Paginação: Filtrar dados
  ```
 
 /-------------------------------------------------
@@ -77,77 +133,3 @@ config/app.php
 Brian2694\Toastr\ToastrServiceProvider::class,
 ```
 
-/-----------------------------------------------------
-
-### Etapa para envio de email
-
-Gerar uma senha de App 
-
-link: https://myaccount.google.com/u/1/apppasswords?pli=1&rapt=AEjHL4MyiBnfXlsLC-sGsFI2qxvpS8vV9uikivxJBm_pWBHGZ_pvr2Fd3ivlitYgWYnF7no_Hu2A7hFiglvpkdRk8XRC_f5vB6t512-BzynxmY09NdkUeog
-
- ### função para envio de email
-
-```sh
- php artisan make:mail ComprovanteDeVendaEmail
- ```
-### Criar um view do layout do email
-
- ### Criar as rotas e buscar email do cliente
-
- ### Criando a função send no controle
-
- ### realizar o envio de email
-
-
-
-
-/-------------------------------------------------
-
-
-CODIGOS LARAVEL 10
-
- {{-- content renderizar tudo o que eu  quero renderizar --}}
-
- ```sh
- @yield('content')
-``` 
- {{--criação de componetes --}}
-
- OBS: precisa criar uma pasta componetes dentro de view
-
- ```sh
- @include('componetes.navegacao')  
-``` 
-{{-- yield: fazer importação dos css --}}
-
-```sh
-@yield('styles') 
-``` 
- {{-- yield: fazer importação dos js --}}
- 
- ```sh
-@yield('script') 
-``` 
-
-EXTRA
-
-https://bitbucket.org/
-
-https://remixicon.com/
-
-https://codeseven.github.io/toastr/demo.html
-
-https://github.com/brian2694/laravel-toastr
-
-
-/----------------------------------------------------
-
-### quanado for subir projeto
-
-git pull --rebase origin develop : puxar a branches sem afetar as alteração
-
-php artisan make:model Flight --all
-
-git push: jogar as alteração no git
-
-//pegando a versão anterior git checkout 48a5768cdd2fa75ab65a588b7999ba969ca317c3
